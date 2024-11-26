@@ -5,15 +5,15 @@
 {% block content %}
 <form method="POST">
     <p>
-        {{fm.hidden_tag()}} <!--hemps protect against the cross site request forgery-->
+        {{form.hidden_tag()}} <!--hemps protect against the cross site request forgery-->
     </p>
-    <p>{{fm.faculty_name.label(class='')}}  <!--This is the text label-->
-        {{fm.faculty_name(class='')}} <!--This is the text field-->
+    <p>{{form.faculty_name.label(class='')}}  <!--This is the text label-->
+        {{form.faculty_name(class='')}} <!--This is the text field-->
     </p>
-    <p>{{fm.faculty_code.label()}}  <!--This is the text label-->
-        {{fm.faculty_code()}} <!--This is the text field-->
+    <p>{{form.faculty_code.label()}}  <!--This is the text label-->
+        {{form.faculty_code()}} <!--This is the text field-->
     </p>
-    <p>{{fm.submit(class='button_primary')}}  
+    <p>{{form.submit(class='button_primary')}}  
     </p>
 </form>
   

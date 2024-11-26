@@ -5,11 +5,11 @@ from app.faculty.models import Faculty
 
 class Departmentform(FlaskForm):
     id=HiddenField('id')
-    #faculty_id=SelectField('Select Faculty')
+    faculty_id=SelectField('Select Faculty')
     department_name=StringField('Department Name:', validators=[DataRequired()])
     department_code=StringField('Department Code:', validators=[DataRequired()])
     submit=SubmitField('Save Changes')
 
-# def __init__(self, *args, **kwargs):
-#     super(Departmentform, self).__init__(*args, **kwargs)
-#     self.faculty_id.choices=[(Faculty.id, Faculty.name)for faculty in Faculty.query.all()]
+def __init__(self, *args, **kwargs):
+    super(Departmentform, self).__init__(*args, **kwargs)
+    self.faculty_id.choices = [(faculty.id, faculty.name) for faculty in Faculty.query.all()]
